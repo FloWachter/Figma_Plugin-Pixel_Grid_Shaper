@@ -1,0 +1,114 @@
+<style>
+  body {
+      background-color: white; 
+      font-family: Helvetica, arial; 
+      display: block;
+      height: 200px;;
+      }
+  h1          {color: black;}
+  p           {color: black;}
+  input {
+    margin: 8px 0px;
+    background-color:transparent;
+    border-radius:6px;
+    border:1px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color:black;
+    font-size:16px;
+    font-weight: 400;
+    padding:6px 6px;
+    text-decoration:none;
+  }
+
+  Button {  
+    background-color:transparent;
+    border-radius:6px;
+    border:1px solid #000000;
+    cursor:pointer;
+    color:black;
+    font-size:16px;
+    font-weight: 400;
+    padding:6px 24px;
+    text-decoration:none;
+    width: 50%;
+  }
+
+  button:focus, input:focus, textarea:focus, select:focus{
+        outline: none;
+  }
+
+Button:hover {  
+    background-color: black;
+    color: white;
+}
+
+.header {
+  position: relative;
+  margin: 8px 8px;
+}
+
+.inputfield {
+    position: relative; 
+    margin: 8px 8px;
+}
+
+.btns {
+  position: relative; 
+  bottom: 8px;
+  padding: 8px 8px;
+  width: 100%;
+} 
+
+</style>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - -  -->
+
+<div class="header">
+  <p>Insert the pixel value of your grid system. </p>
+</div>
+
+<div class="inputfield">
+  <label class="inputfield--lable" for="gridValue">Grid Value</label>
+  <br>
+  <input id="gridValue" value="8">
+</div>
+
+<div class="btns">
+  <button id="control" >Adjust</button>
+  
+  <button id="#" >Test</button>
+  <button id="#" >Test</button>
+  <!-- <button id="cancel">Cancel</button> -->
+</div>
+<br>
+
+<!-- - - - - - - - - - - - - - - - - - - - - -  -->
+<script type="text/javascript" src="./figma-plugin-ds.min.js"></script>
+<script>
+
+  document.getElementById('control').onclick = () => {
+    const textbox = document.getElementById('gridValue');
+    const gridValue = parseInt(textbox.value, 10);
+    const behavior = 'round';
+    parent.postMessage({ pluginMessage: { type: 'control', gridValue, behavior } }, '*')
+  }
+  
+  // document.getElementById('cancel').onclick = () => {
+  //   parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+  // }
+
+</script>
+
+
+
+<!-- Functions and Features To Do
+
+- Need a button with makes it to the next bigger size or smaller grid size
+
+- as a feature with is poping up when marking a frame 
+frame Fit to content  
+
+
+ -->
