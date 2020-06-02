@@ -1,3 +1,6 @@
+// -----------------------------------------------------------------------------
+// Copyright 2020, Florian Wachter,florianwachter.com,  All rights reserved.
+// -----------------------------------------------------------------------------
 // opens the ui.html and set the size of it
 figma.showUI(__html__,{ width: 250, height: 200 });
 figma.ui.onmessage = msg => {
