@@ -1,0 +1,11 @@
+.adj_manual {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .adj_manual_group {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+  }
